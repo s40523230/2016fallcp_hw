@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!-- Created by Leo: http://leoeditor.com/leo_toc.html -->
 <leo_file xmlns:leo="http://leoeditor.com/namespaces/leo-python-editor/1.1" >
 <leo_header file_format="2" tnodes="0" max_tnode_index="0" clone_windows="0"/>
@@ -366,16 +366,12 @@ print("hello")
 ### 虎科大機械設計工程系
 
 &lt;small&gt;
-Created by [s40523230](http://s40523230.github.io/blog/)
+Created by [s40523230](http://chiamingyen.github.io/kmolab/blog/)
 &lt;/small&gt;
 
-[甲班計算機程式課程網誌](blog/index.html)
+[40523230](blog/index.html)
 
-[乙班計算機程式課程網誌](https://mdecourse.github.io/2016fallcpb/blog)
 
-[計算機程式教學影片](https://vimeo.com/user24079973)
-
-[電腦輔助設計室電腦硬體](http://project.mde.tw/blog/yen-dian-nao-fu-zhu-she-ji-shi-dian-nao-pei-zhi.html)
 </t>
 <t tx="amd.20161004112026.1">&lt;section data-markdown&gt;
     &lt;script type="text/template"&gt;
