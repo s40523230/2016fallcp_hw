@@ -1,5 +1,582 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>2016Fall CPA 課程網誌 (虎尾科大MDE)</title><link href="./" rel="alternate"></link><link href="./feeds/all.atom.xml" rel="self"></link><id>./</id><updated>2016-10-31T12:00:00+08:00</updated><entry><title>2016Fall 程式練習題-12345</title><link href="./2016fall-cheng-shi-lian-xi-ti-12345.html" rel="alternate"></link><published>2016-10-31T12:00:00+08:00</published><updated>2016-10-31T12:00:00+08:00</updated><author><name>yen</name></author><id>tag:,2016-10-31:./2016fall-cheng-shi-lian-xi-ti-12345.html</id><summary type="html">&lt;p&gt;1234已知截至第六週 2016fallcpa 的分組資料位於倉儲中的 &lt;a href="./../w6_group.txt"&gt;w6_group.txt&lt;/a&gt;, 而從學校修課系統下載的修課人員名條則為 &lt;a href="./../w6_list.txt"&gt;w6_list.txt&lt;/a&gt;, 請各組著手練習, 找出尚未納入分組的人員名單, 並研擬如何處置上課一個半月卻尚未進入情況的學員?&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>2016Fall CPB 課程網誌 (虎尾科大MDE)</title><link href="./" rel="alternate"></link><link href="./feeds/all.atom.xml" rel="self"></link><id>./</id><updated>2016-11-14T12:00:00+08:00</updated><entry><title>w11</title><link href="./w11.html" rel="alternate"></link><published>2016-11-14T12:00:00+08:00</published><updated>2016-11-14T12:00:00+08:00</updated><author><name>yen</name></author><id>tag:,2016-11-14:./w11.html</id><summary type="html">&lt;p&gt;Brython 繪圖&lt;/p&gt;
+
+
+&lt;p&gt;繪圖流程,導入程式庫,啟動,然後引用各種模組開始繪圖&lt;/p&gt;
+&lt;!-- 導入 Brython 標準程式庫 --&gt;
+
+&lt;script type="text/javascript" 
+    src="https://cdn.rawgit.com/brython-dev/brython/master/www/src/brython_dist.js"&gt;
+&lt;/script&gt;
+
+&lt;!-- 啟動 Brython --&gt;
+
+&lt;script&gt;
+window.onload=function(){
+brython(1);
+}
+&lt;/script&gt;
+
+&lt;!-- A Major --&gt;
+
+&lt;canvas id="A Major" width="600" height="250"&gt;&lt;/canvas&gt;
+
+&lt;script type="text/python3"&gt;
+from browser import document as doc
+import math
+canvas = doc["A Major"]
+ctx = canvas.getContext("2d")
+
+ #垂直
+for i in range(6):
+    ctx.beginPath()
+    ctx.lineWidth = 1
+    ctx.moveTo(100+i*20,50)
+    ctx.lineTo(100+i*20,150)
+    ctx.strokeStyle = "blue"
+    ctx.stroke()
+    ctx.closePath()
+#水平
+for i in range(5):
+    ctx.beginPath()
+    if i == 0:
+        ctx.lineWidth = 7
+    else:
+        ctx.lineWidth = 1
+    ctx.moveTo(99,50+i*25)
+    ctx.lineTo(201,50+i*25)
+    ctx.strokeStyle = "blue"
+    ctx.stroke()
+    ctx.closePath()
+
+#A Major 
+ctx.beginPath()
+ctx.fillStyle = 'black'
+ctx.strokeStyle = "black"
+ctx.font = "25px Arial"
+ctx.fillText("A Major", 110, 25)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+# 1.2.3
+ctx.beginPath()
+ctx.fillStyle = 'black'
+ctx.strokeStyle = "black"
+for i in range(3):
+    ctx.arc(140+i*20, 87.5, 7, 0, 2*math.pi, False)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+ctx.beginPath()
+ctx.fillStyle = 'white'
+ctx.font = "16px Arial"
+ctx.fillText("1", 135, 92.5)
+ctx.fillText("2", 155, 92.5)
+ctx.fillText("3", 175, 92.5)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+# o
+ctx.beginPath()
+ctx.arc(120, 40, 5, 0, 2*math.pi, False)
+ctx.lineWidth =3
+ctx.strokeStyle = "black"
+ctx.stroke()
+ctx.closePath()
+ctx.beginPath()
+ctx.arc(200, 40, 5, 0, 2*math.pi, False)
+ctx.lineWidth =3
+ctx.strokeStyle = "black"
+ctx.stroke()
+ctx.closePath()
+# x
+ctx.beginPath()
+#ctx.arc(100, 40, 5, 0, 2*math.pi, False)
+ctx.moveTo(95, 35)
+ctx.lineTo(105, 45)
+ctx.moveTo(105, 35)
+ctx.lineTo(95, 45)
+ctx.lineWidth =3
+ctx.strokeStyle = "black"
+ctx.stroke()
+ctx.closePath()
+&lt;/script&gt;
+
+&lt;!-- C Major --&gt;
+
+&lt;canvas id="C Major" width="600" height="250"&gt;&lt;/canvas&gt;
+
+&lt;script type="text/python3"&gt;
+from browser import document as doc
+import math
+canvas = doc["C Major"]
+ctx = canvas.getContext("2d")
+
+ #垂直
+for i in range(6):
+    ctx.beginPath()
+    ctx.lineWidth = 1
+    ctx.moveTo(100+i*20,50)
+    ctx.lineTo(100+i*20,150)
+    ctx.strokeStyle = "blue"
+    ctx.stroke()
+    ctx.closePath()
+#水平
+for i in range(5):
+    ctx.beginPath()
+    if i == 0:
+        ctx.lineWidth = 7
+    else:
+        ctx.lineWidth = 1
+    ctx.moveTo(99,50+i*25)
+    ctx.lineTo(201,50+i*25)
+    ctx.strokeStyle = "blue"
+    ctx.stroke()
+    ctx.closePath()
+
+#C Major 
+ctx.beginPath()
+ctx.fillStyle = 'black'
+ctx.strokeStyle = "black"
+ctx.font = "25px Arial"
+ctx.fillText("C Major", 110, 25)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+# 1.2.3
+ctx.beginPath()
+ctx.fillStyle = 'black'
+ctx.strokeStyle = "black"
+ctx.arc(180, 62.5, 7, 0, 2*math.pi, False)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+ctx.beginPath()
+ctx.fillStyle = 'black'
+ctx.strokeStyle = "black"
+ctx.arc(140, 87.5, 7, 0, 2*math.pi, False)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+ctx.beginPath()
+ctx.fillStyle = 'black'
+ctx.strokeStyle = "black"
+ctx.arc(120, 112.5, 7, 0, 2*math.pi, False)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+ctx.beginPath()
+ctx.fillStyle = 'white'
+ctx.font = "16px Arial"
+ctx.fillText("1", 175, 67.5)
+ctx.fillText("2", 135, 92.5)
+ctx.fillText("3", 115, 117.5)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+# o
+ctx.beginPath()
+ctx.arc(160, 40, 5, 0, 2*math.pi, False)
+ctx.lineWidth =3
+ctx.strokeStyle = "black"
+ctx.stroke()
+ctx.closePath()
+ctx.beginPath()
+ctx.arc(200, 40, 5, 0, 2*math.pi, False)
+ctx.lineWidth =3
+ctx.strokeStyle = "black"
+ctx.stroke()
+ctx.closePath()
+# x
+ctx.beginPath()
+#ctx.arc(100, 40, 5, 0, 2*math.pi, False)
+ctx.moveTo(95, 35)
+ctx.lineTo(105, 45)
+ctx.moveTo(105, 35)
+ctx.lineTo(95, 45)
+ctx.lineWidth =3
+ctx.strokeStyle = "black"
+ctx.stroke()
+ctx.closePath()
+&lt;/script&gt;
+
+&lt;!-- G Major --&gt;
+
+&lt;canvas id="G Major" width="600" height="250"&gt;&lt;/canvas&gt;
+
+&lt;script type="text/python3"&gt;
+from browser import document as doc
+import math
+canvas = doc["G Major"]
+ctx = canvas.getContext("2d")
+
+ #垂直
+for i in range(6):
+    ctx.beginPath()
+    ctx.lineWidth = 1
+    ctx.moveTo(100+i*20,50)
+    ctx.lineTo(100+i*20,150)
+    ctx.strokeStyle = "blue"
+    ctx.stroke()
+    ctx.closePath()
+#水平
+for i in range(5):
+    ctx.beginPath()
+    if i == 0:
+        ctx.lineWidth = 7
+    else:
+        ctx.lineWidth = 1
+    ctx.moveTo(99,50+i*25)
+    ctx.lineTo(201,50+i*25)
+    ctx.strokeStyle = "blue"
+    ctx.stroke()
+    ctx.closePath()
+
+#G Major 
+ctx.beginPath()
+ctx.fillStyle = 'black'
+ctx.strokeStyle = "black"
+ctx.font = "25px Arial"
+ctx.fillText("G Major", 110, 25)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+# 1.2.3.4
+ctx.beginPath()
+ctx.fillStyle = 'black'
+ctx.strokeStyle = "black"
+ctx.arc(120, 87.5, 7, 0, 2*math.pi, False)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+ctx.beginPath()
+ctx.fillStyle = 'black'
+ctx.strokeStyle = "black"
+ctx.arc(100, 112.5, 7, 0, 2*math.pi, False)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+ctx.beginPath()
+ctx.fillStyle = 'black'
+ctx.strokeStyle = "black"
+for i in range(2):
+    ctx.arc(180+i*20, 112.5, 7, 0, 2*math.pi, False)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+ctx.beginPath()
+ctx.fillStyle = 'white'
+ctx.font = "16px Arial"
+ctx.fillText("1", 115, 92.5)
+ctx.fillText("2", 95, 117.5)
+ctx.fillText("3", 175, 117.5)
+ctx.fillText("4", 195, 117.5)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+# o
+ctx.beginPath()
+ctx.arc(160, 40, 5, 0, 2*math.pi, False)
+ctx.lineWidth =3
+ctx.strokeStyle = "black"
+ctx.stroke()
+ctx.closePath()
+ctx.beginPath()
+ctx.arc(140, 40, 5, 0, 2*math.pi, False)
+ctx.lineWidth =3
+ctx.strokeStyle = "black"
+ctx.stroke()
+ctx.closePath()
+&lt;/script&gt;
+
+&lt;!-- D Major --&gt;
+
+&lt;canvas id="D Major" width="600" height="250"&gt;&lt;/canvas&gt;
+
+&lt;script type="text/python3"&gt;
+from browser import document as doc
+import math
+canvas = doc["D Major"]
+ctx = canvas.getContext("2d")
+
+ #垂直
+for i in range(6):
+    ctx.beginPath()
+    ctx.lineWidth = 1
+    ctx.moveTo(100+i*20,50)
+    ctx.lineTo(100+i*20,150)
+    ctx.strokeStyle = "blue"
+    ctx.stroke()
+    ctx.closePath()
+#水平
+for i in range(5):
+    ctx.beginPath()
+    if i == 0:
+        ctx.lineWidth = 7
+    else:
+        ctx.lineWidth = 1
+    ctx.moveTo(99,50+i*25)
+    ctx.lineTo(201,50+i*25)
+    ctx.strokeStyle = "blue"
+    ctx.stroke()
+    ctx.closePath()
+
+#D Major 
+ctx.beginPath()
+ctx.fillStyle = 'black'
+ctx.strokeStyle = "black"
+ctx.font = "25px Arial"
+ctx.fillText("D Major", 110, 25)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+# 1.2.3
+ctx.beginPath()
+ctx.fillStyle = 'black'
+ctx.strokeStyle = "black"
+for i in range(2):
+    ctx.arc(160+i*40, 87.5, 7, 0, 2*math.pi, False)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+ctx.beginPath()
+ctx.fillStyle = 'black'
+ctx.strokeStyle = "black"
+ctx.arc(180, 112.5, 7, 0, 2*math.pi, False)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+ctx.beginPath()
+ctx.fillStyle = 'white'
+ctx.font = "16px Arial"
+ctx.fillText("1", 155, 92.5)
+ctx.fillText("2", 175, 117.5)
+ctx.fillText("3", 195, 92.5)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+# o
+ctx.beginPath()
+ctx.arc(140, 40, 5, 0, 2*math.pi, False)
+ctx.lineWidth =3
+ctx.strokeStyle = "black"
+ctx.stroke()
+ctx.closePath()
+# x
+ctx.beginPath()
+ctx.moveTo(95, 35)
+ctx.lineTo(105, 45)
+ctx.moveTo(105, 35)
+ctx.lineTo(95, 45)
+ctx.moveTo(115, 35)
+ctx.lineTo(125, 45)
+ctx.moveTo(125, 35)
+ctx.lineTo(115, 45)
+ctx.lineWidth =3
+ctx.strokeStyle = "black"
+ctx.stroke()
+ctx.closePath()
+&lt;/script&gt;
+
+&lt;!-- E Major --&gt;
+
+&lt;canvas id="E Major" width="600" height="250"&gt;&lt;/canvas&gt;
+
+&lt;script type="text/python3"&gt;
+from browser import document as doc
+import math
+canvas = doc["E Major"]
+ctx = canvas.getContext("2d")
+
+ #垂直
+for i in range(6):
+    ctx.beginPath()
+    ctx.lineWidth = 1
+    ctx.moveTo(100+i*20,50)
+    ctx.lineTo(100+i*20,150)
+    ctx.strokeStyle = "blue"
+    ctx.stroke()
+    ctx.closePath()
+#水平
+for i in range(5):
+    ctx.beginPath()
+    if i == 0:
+        ctx.lineWidth = 7
+    else:
+        ctx.lineWidth = 1
+    ctx.moveTo(99,50+i*25)
+    ctx.lineTo(201,50+i*25)
+    ctx.strokeStyle = "blue"
+    ctx.stroke()
+    ctx.closePath()
+
+#E Major 
+ctx.beginPath()
+ctx.fillStyle = 'black'
+ctx.strokeStyle = "black"
+ctx.font = "25px Arial"
+ctx.fillText("E Major", 110, 25)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+# 1.2.3
+ctx.beginPath()
+ctx.fillStyle = 'black'
+ctx.strokeStyle = "black"
+ctx.arc(160, 62.5, 7, 0, 2*math.pi, False)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+ctx.beginPath()
+ctx.fillStyle = 'black'
+ctx.strokeStyle = "black"
+for i in range(2):
+    ctx.arc(120+i*20, 87.5, 7, 0, 2*math.pi, False)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+ctx.beginPath()
+ctx.fillStyle = 'white'
+ctx.font = "16px Arial"
+ctx.fillText("1", 155, 67.5)
+ctx.fillText("2", 115, 92.5)
+ctx.fillText("3", 135, 92.5)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+# o
+ctx.beginPath()
+ctx.arc(180, 40, 5, 0, 2*math.pi, False)
+ctx.lineWidth =3
+ctx.strokeStyle = "black"
+ctx.stroke()
+ctx.closePath()
+ctx.beginPath()
+ctx.arc(200, 40, 5, 0, 2*math.pi, False)
+ctx.lineWidth =3
+ctx.strokeStyle = "black"
+ctx.stroke()
+ctx.closePath()
+# x
+ctx.beginPath()
+#ctx.arc(100, 40, 5, 0, 2*math.pi, False)
+ctx.moveTo(95, 35)
+ctx.lineTo(105, 45)
+ctx.moveTo(105, 35)
+ctx.lineTo(95, 45)
+ctx.lineWidth =3
+ctx.strokeStyle = "black"
+ctx.stroke()
+ctx.closePath()
+&lt;/script&gt;
+
+&lt;!-- C maj7 --&gt;
+
+&lt;canvas id="C maj7" width="600" height="250"&gt;&lt;/canvas&gt;
+
+&lt;script type="text/python3"&gt;
+from browser import document as doc
+import math
+canvas = doc["C maj7"]
+ctx = canvas.getContext("2d")
+
+ #垂直
+for i in range(6):
+    ctx.beginPath()
+    ctx.lineWidth = 1
+    ctx.moveTo(100+i*20,50)
+    ctx.lineTo(100+i*20,150)
+    ctx.strokeStyle = "blue"
+    ctx.stroke()
+    ctx.closePath()
+#水平
+for i in range(5):
+    ctx.beginPath()
+    if i == 0:
+        ctx.lineWidth = 7
+    else:
+        ctx.lineWidth = 1
+    ctx.moveTo(99,50+i*25)
+    ctx.lineTo(201,50+i*25)
+    ctx.strokeStyle = "blue"
+    ctx.stroke()
+    ctx.closePath()
+
+#C maj7 
+ctx.beginPath()
+ctx.fillStyle = 'black'
+ctx.strokeStyle = "black"
+ctx.font = "25px Arial"
+ctx.fillText("C maj7", 110, 25)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+# 1.2
+ctx.beginPath()
+ctx.fillStyle = 'black'
+ctx.strokeStyle = "black"
+ctx.arc(140, 87.5, 7, 0, 2*math.pi, False)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+ctx.beginPath()
+ctx.fillStyle = 'black'
+ctx.strokeStyle = "black"
+ctx.arc(120, 112.5, 7, 0, 2*math.pi, False)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+ctx.beginPath()
+ctx.fillStyle = 'white'
+ctx.font = "16px Arial"
+ctx.fillText("1", 135, 92.5)
+ctx.fillText("2", 115, 117.5)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+# o
+ctx.beginPath()
+ctx.arc(160, 40, 5, 0, 2*math.pi, False)
+ctx.lineWidth =3
+ctx.strokeStyle = "black"
+ctx.stroke()
+ctx.closePath()
+ctx.beginPath()
+ctx.arc(180, 40, 5, 0, 2*math.pi, False)
+ctx.lineWidth =3
+ctx.strokeStyle = "black"
+ctx.stroke()
+ctx.closePath()
+ctx.beginPath()
+ctx.arc(200, 40, 5, 0, 2*math.pi, False)
+ctx.lineWidth =3
+ctx.strokeStyle = "black"
+ctx.stroke()
+ctx.closePath()
+# x
+ctx.beginPath()
+#ctx.arc(100, 40, 5, 0, 2*math.pi, False)
+ctx.moveTo(95, 35)
+ctx.lineTo(105, 45)
+ctx.moveTo(105, 35)
+ctx.lineTo(95, 45)
+ctx.lineWidth =3
+ctx.strokeStyle = "black"
+ctx.stroke()
+ctx.closePath()
+&lt;/script&gt;</summary><category term="評分"></category></entry><entry><title>2016Fall 程式練習題-12345</title><link href="./2016fall-cheng-shi-lian-xi-ti-12345.html" rel="alternate"></link><published>2016-10-31T12:00:00+08:00</published><updated>2016-10-31T12:00:00+08:00</updated><author><name>yen</name></author><id>tag:,2016-10-31:./2016fall-cheng-shi-lian-xi-ti-12345.html</id><summary type="html">&lt;p&gt;1234已知截至第六週 2016fallcpa 的分組資料位於倉儲中的 &lt;a href="./../w6_group.txt"&gt;w6_group.txt&lt;/a&gt;, 而從學校修課系統下載的修課人員名條則為 &lt;a href="./../w6_list.txt"&gt;w6_list.txt&lt;/a&gt;, 請各組著手練習, 找出尚未納入分組的人員名單, 並研擬如何處置上課一個半月卻尚未進入情況的學員?&lt;/p&gt;
 
 
 &lt;p&gt;研擬如何處置上課一個半月卻尚未進入情況的學員?&lt;/p&gt;</summary><category term="使用導引"></category></entry><entry><title>2016Fall 程式練習題-1234</title><link href="./2016fall-cheng-shi-lian-xi-ti-1234.html" rel="alternate"></link><published>2016-10-24T12:00:00+08:00</published><updated>2016-10-24T12:00:00+08:00</updated><author><name>yen</name></author><id>tag:,2016-10-24:./2016fall-cheng-shi-lian-xi-ti-1234.html</id><summary type="html">&lt;p&gt;1234已知截至第六週 2016fallcpa 的分組資料位於倉儲中的 &lt;a href="./../w6_group.txt"&gt;w6_group.txt&lt;/a&gt;, 而從學校修課系統下載的修課人員名條則為 &lt;a href="./../w6_list.txt"&gt;w6_list.txt&lt;/a&gt;, 請各組著手練習, 找出尚未納入分組的人員名單, 並研擬如何處置上課一個半月卻尚未進入情況的學員?&lt;/p&gt;
