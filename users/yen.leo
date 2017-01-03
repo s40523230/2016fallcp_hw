@@ -18,7 +18,7 @@
 <v t="leo.20151213173830.1" a="E"><vh>假如要在近端檢視, 使用下列按鈕</vh>
 <v t="leo.20151213085727.1"><vh>@button pelican-blog</vh></v>
 </v>
-<v t="amd.20151215180106.1" a="E"><vh>設定與開發</vh>
+<v t="amd.20151215180106.1"><vh>設定與開發</vh>
 <v t="amd.20151216151325.1" a="E"><vh>@clean index.html</vh>
 <v t="amd.20161004083800.1" a="E"><vh>html</vh>
 <v t="amd.20161004083800.2"><vh>head</vh></v>
@@ -172,16 +172,18 @@
 <v t="leo.20161203173844.1"><vh>@edit 20161129.md</vh></v>
 <v t="leo.20161203173836.1"><vh>@edit 20161203v3.md</vh></v>
 <v t="leo.20161212004113.1"><vh>@edit 20161211.md</vh></v>
+<v t="leo.20170103211135.1"><vh>@edit 20161226.md</vh></v>
 </v>
 </v>
 </v>
-<v t="amd.20160106094754.1"><vh>@path ./../content/pages</vh>
-<v t="amd.20160106094829.1" a="E"><vh>yen 所寫的 pages 文章</vh>
-<v t="amd.20160106094844.1"><vh>@edit pages_1.md</vh></v>
+<v t="leo.20170103210816.1" a="E"><vh>@path ./../content/pages</vh>
+<v t="leo.20170103210816.2" a="E"><vh>yen 所寫的 pages 文章</vh>
+<v t="leo.20170103210816.3"><vh>@edit pages_1.md</vh></v>
 </v>
 </v>
 <v t="amd.20161004202833.1"><vh>@edit ../README.md</vh></v>
 <v t="yen.20161022111056.1"><vh>@button https server</vh></v>
+<v t="leo.20170103210948.1"><vh>@button ipv6 https server</vh></v>
 <v t="yen.20161022151749.1"><vh>產生 .key 與 .crt</vh></v>
 </vnodes>
 <tnodes>
@@ -214,8 +216,6 @@ print("hello")
 
 </t>
 <t tx="amd.20160106093454.1"></t>
-<t tx="amd.20160106094754.1"></t>
-<t tx="amd.20160106094829.1"></t>
 <t tx="amd.20160106095324.1"></t>
 <t tx="amd.20160727114506.1"></t>
 <t tx="amd.20160921213353.1"></t>
@@ -479,6 +479,36 @@ PLUGINS = ['liquid_tags.notebook', 'summary']
 <t tx="leo.20151213230957.1"># 設定網誌以 md 檔案建立的 file system date 為準, 無需自行設定
 
 DEFAULT_DATE = 'fs'</t>
+<t tx="leo.20170103210816.1"></t>
+<t tx="leo.20170103210816.2"></t>
+<t tx="leo.20170103210948.1">@language python
+import os
+import subprocess
+import threading
+import socket
+import http.server, ssl
+
+class HTTPServerV6(http.server.HTTPServer):
+    address_family = socket.AF_INET6
+  
+def domake():
+    # build directory
+    os.chdir("./../")
+    ipv6_address = '::1'
+    server_address = (ipv6_address, 6443)
+    #httpd = http.server.HTTPServer(server_address, http.server.SimpleHTTPRequestHandler)
+    httpd = HTTPServerV6(server_address, http.server.SimpleHTTPRequestHandler)
+    httpd.socket = ssl.wrap_socket(httpd.socket,
+                                   server_side=True,
+                                   certfile='localhost.crt',
+                                   keyfile='localhost.key',
+                                   ssl_version=ssl.PROTOCOL_TLSv1)
+    print("7443 https server started")
+    httpd.serve_forever()
+
+# 利用執行緒執行 https 伺服器
+make = threading.Thread(target=domake)
+make.start()</t>
 <t tx="yen.20161011114704.1">&lt;section data-markdown&gt;
     &lt;script type="text/template"&gt;
 @others
