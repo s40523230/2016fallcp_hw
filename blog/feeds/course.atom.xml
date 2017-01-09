@@ -34,7 +34,66 @@ while ans != a_in:
     guess += 1
 
 alert("恭喜答對 ,一共猜了" + (str(guess)) + "次")
-&lt;/script&gt;</summary><category term="Brython"></category></entry><entry><title>w13</title><link href="./w13.html" rel="alternate"></link><published>2016-12-11T12:00:00+08:00</published><updated>2016-12-11T12:00:00+08:00</updated><author><name>40523230</name></author><id>tag:,2016-12-11:./w13.html</id><summary type="html">&lt;p&gt;Brython 繪圖&lt;/p&gt;
+&lt;/script&gt;</summary><category term="Brython"></category></entry><entry><title>w18-2</title><link href="./w18-2.html" rel="alternate"></link><published>2016-12-26T12:00:00+08:00</published><updated>2016-12-26T12:00:00+08:00</updated><author><name>40523230</name></author><id>tag:,2016-12-26:./w18-2.html</id><summary type="html">&lt;!-- PELICAN_END_SUMMARY --&gt;
+
+&lt;!-- 導入 Brython 標準程式庫 --&gt;
+
+&lt;script type="text/javascript" 
+    src="https://cdn.rawgit.com/brython-dev/brython/master/www/src/brython_dist.js"&gt;
+&lt;/script&gt;
+
+&lt;!-- 啟動 Brython --&gt;
+
+&lt;script&gt;
+window.onload=function(){
+brython(1);
+}
+&lt;/script&gt;
+
+&lt;!-- 以下實際利用  Brython 畫圖 --&gt;
+
+&lt;script type="text/python3"&gt;
+from browser import alert
+import random
+
+ans = random.randint(1, 100)
+
+a_in = int(input("輸入整數:"))
+guess = 1
+
+while ans != a_in:
+    if a_in &lt; ans:
+        a_in = int(input("too small"))
+    else:
+        a_in = int(input("too big"))
+    guess += 1
+
+alert("恭喜答對 ,一共猜了" + (str(guess)) + "次")
+&lt;/script&gt;
+
+&lt;pre class="brush: python"&gt;
+
+&lt;!-- 以下實際利用  Brython 畫圖 --&gt;
+&lt;script type="text/python3"&gt;
+from browser import alert
+import random
+
+ans = random.randint(1, 100)
+
+a_in = int(input("輸入整數:"))
+guess = 1
+
+while ans != a_in:
+    if a_in &lt; ans:
+        a_in = int(input("too small"))
+    else:
+        a_in = int(input("too big"))
+    guess += 1
+
+alert("恭喜答對 ,一共猜了" + (str(guess)) + "次")
+&lt;/script&gt;
+
+&lt;/pre&gt;</summary><category term="Brython"></category></entry><entry><title>w13</title><link href="./w13.html" rel="alternate"></link><published>2016-12-11T12:00:00+08:00</published><updated>2016-12-11T12:00:00+08:00</updated><author><name>40523230</name></author><id>tag:,2016-12-11:./w13.html</id><summary type="html">&lt;p&gt;Brython 繪圖&lt;/p&gt;
 
 
 &lt;p&gt;繪圖流程, 導入程式庫, 啟動, 然後引用各種模組開始繪圖&lt;/p&gt;
@@ -815,7 +874,88 @@ w = 20
 h = 30
 # 將前面的水平線與垂直線繪圖改用 background 繪圖
 background(250, 250, w, h, 5, 3, ctx)
-&lt;/script&gt;</summary><category term="Brython"></category></entry><entry><title>w12</title><link href="./w12.html" rel="alternate"></link><published>2016-11-21T12:00:00+08:00</published><updated>2016-11-21T12:00:00+08:00</updated><author><name>yen</name></author><id>tag:,2016-11-21:./w12.html</id><summary type="html">&lt;p&gt;Brython 繪圖&lt;/p&gt;
+&lt;/script&gt;</summary><category term="Brython"></category></entry><entry><title>w15</title><link href="./w15.html" rel="alternate"></link><published>2016-12-11T12:00:00+08:00</published><updated>2016-12-11T12:00:00+08:00</updated><author><name>40523230</name></author><id>tag:,2016-12-11:./w15.html</id><summary type="html">&lt;p&gt;Brython 繪圖&lt;/p&gt;
+
+
+&lt;p&gt;繪圖流程, 導入程式庫, 啟動, 然後引用各種模組開始繪圖&lt;/p&gt;
+&lt;!-- 導入 Brython 標準程式庫 --&gt;
+
+&lt;script type="text/javascript" 
+    src="https://cdn.rawgit.com/brython-dev/brython/master/www/src/brython_dist.js"&gt;
+&lt;/script&gt;
+
+&lt;!-- 啟動 Brython --&gt;
+
+&lt;script&gt;
+window.onload=function(){
+brython(1);
+}
+&lt;/script&gt;
+
+&lt;!-- 以下實際利用  Brython 畫圖 --&gt;
+
+&lt;script type="text/python3"&gt;
+from browser import document
+from browser import alert
+
+def get_input(ev):
+    the_input = input("請輸入")
+    alert("輸入為:"+str(the_input))
+    document['ch01'].bind('click',get_input)
+&lt;/script&gt;
+
+&lt;p&gt;&lt;button id="ch01"&gt;取輸入後, 列印出來&lt;/button&gt;&lt;/p&gt;</summary><category term="Brython"></category></entry><entry><title>w18-1</title><link href="./w18-1.html" rel="alternate"></link><published>2016-12-11T12:00:00+08:00</published><updated>2016-12-11T12:00:00+08:00</updated><author><name>40523230</name></author><id>tag:,2016-12-11:./w18-1.html</id><summary type="html">&lt;p&gt;Brython 繪圖&lt;/p&gt;
+
+
+&lt;p&gt;繪圖流程, 導入程式庫, 啟動, 然後引用各種模組開始繪圖&lt;/p&gt;
+&lt;!-- 導入 Brython 標準程式庫 --&gt;
+
+&lt;script type="text/javascript" 
+    src="https://cdn.rawgit.com/brython-dev/brython/master/www/src/brython_dist.js"&gt;
+&lt;/script&gt;
+
+&lt;!-- 啟動 Brython --&gt;
+
+&lt;script&gt;
+window.onload=function(){
+brython(1);
+}
+&lt;/script&gt;
+
+&lt;!-- 以下實際利用  Brython 畫圖 --&gt;
+
+&lt;script type="text/python3"&gt;
+from browser import document
+from browser import alert
+
+def get_input(ev):
+    the_input = input("請輸入")
+    alert("輸入為:"+str(the_input))
+
+document['ch01'].bind('click',get_input)
+
+&lt;/script&gt;
+
+&lt;p&gt;&lt;button id="ch01"&gt;取輸入後, 列印出來&lt;/button&gt;&lt;/p&gt;
+
+&lt;pre class="brush: python"&gt;
+
+&lt;!-- 以下實際利用  Brython 畫圖 --&gt;
+&lt;script type="text/python3"&gt;
+from browser import document
+from browser import alert
+
+def get_input(ev):
+    the_input = input("請輸入")
+    alert("輸入為:"+str(the_input))
+
+document['ch01'].bind('click',get_input)
+
+&lt;/script&gt;
+
+&lt;p&gt;&lt;button id="ch01"&gt;取輸入後, 列印出來&lt;/button&gt;&lt;/p&gt;
+
+&lt;/pre&gt;</summary><category term="Brython"></category></entry><entry><title>w12</title><link href="./w12.html" rel="alternate"></link><published>2016-11-21T12:00:00+08:00</published><updated>2016-11-21T12:00:00+08:00</updated><author><name>yen</name></author><id>tag:,2016-11-21:./w12.html</id><summary type="html">&lt;p&gt;Brython 繪圖&lt;/p&gt;
 
 
 &lt;p&gt;繪圖流程, 導入程式庫, 啟動, 然後引用各種模組開始繪圖&lt;/p&gt;
