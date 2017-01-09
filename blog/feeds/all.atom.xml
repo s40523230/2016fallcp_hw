@@ -17,13 +17,11 @@ brython(1);
 
 &lt;!-- 以下實際利用  Brython 畫圖 --&gt;
 
-&lt;p&gt;w15 製作按鈕&lt;/p&gt;
-&lt;p&gt;https://s40523230.github.io/2016fallcp_hw/blog/w18-1.html&lt;/p&gt;
-&lt;p&gt;w16 猜數字遊戲&lt;/p&gt;
-&lt;p&gt;https://s40523230.github.io/2016fallcp_hw/blog/w18-2.html&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://s40523230.github.io/2016fallcp_hw/blog/w18-1.html"&gt;製作按鈕&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://s40523230.github.io/2016fallcp_hw/blog/w18-2.html"&gt;w16 猜數字遊戲&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;w17 1/2放假&lt;/p&gt;
-&lt;p&gt;影片連結 : https://vimeo.com/198638361&lt;/p&gt;
-&lt;p&gt;wiki比較詳細老師看這個就好 : https://github.com/s40523230/2016fallcp_hw/wiki/w18-%E6%9C%9F%E6%9C%AB&lt;/p&gt;</summary><category term="Brython"></category></entry><entry><title>w16</title><link href="./w16.html" rel="alternate"></link><published>2016-12-26T12:00:00+08:00</published><updated>2016-12-26T12:00:00+08:00</updated><author><name>40523230</name></author><id>tag:,2016-12-26:./w16.html</id><summary type="html">&lt;!-- PELICAN_END_SUMMARY --&gt;
+&lt;p&gt;&lt;a href="https://vimeo.com/198638361"&gt;影片&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/s40523230/2016fallcp_hw/wiki/w18-%E6%9C%9F%E6%9C%AB"&gt;wiki比較詳細老師看這個就好&lt;/a&gt;&lt;/p&gt;</summary><category term="Brython"></category></entry><entry><title>w16</title><link href="./w16.html" rel="alternate"></link><published>2016-12-26T12:00:00+08:00</published><updated>2016-12-26T12:00:00+08:00</updated><author><name>40523230</name></author><id>tag:,2016-12-26:./w16.html</id><summary type="html">&lt;!-- PELICAN_END_SUMMARY --&gt;
 
 &lt;!-- 導入 Brython 標準程式庫 --&gt;
 
