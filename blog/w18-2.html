@@ -333,45 +333,59 @@ brython(1);
 <!-- 以下實際利用  Brython 畫圖 -->
 
 <script type="text/python3">
+from browser import document
 from browser import alert
 import random
 
-ans = random.randint(1, 100)
+def two_input(ev):
+    ans = random.randint(1, 100)
 
-a_in = int(input("輸入整數:"))
-guess = 1
+    a_in = int(input("輸入整數:"))
+    guess = 1
 
-while ans != a_in:
-    if a_in < ans:
-        a_in = int(input("too small"))
-    else:
-        a_in = int(input("too big"))
-    guess += 1
+    while ans != a_in:
+        if a_in < ans:
+            a_in = int(input("too small"))
+        else:
+            a_in = int(input("too big"))
+        guess += 1
 
-alert("恭喜答對 ,一共猜了" + (str(guess)) + "次")
+    alert("恭喜答對 ,一共猜了" + (str(guess)) + "次")
+
+document['ch02'].bind('click',two_input)
+
 </script>
+
+<p><button id="ch02">猜數字</button></p>
 
 <pre class="brush: python">
 
 <!-- 以下實際利用  Brython 畫圖 -->
 <script type="text/python3">
+from browser import document
 from browser import alert
 import random
 
-ans = random.randint(1, 100)
+def two_input(ev):
+    ans = random.randint(1, 100)
 
-a_in = int(input("輸入整數:"))
-guess = 1
+    a_in = int(input("輸入整數:"))
+    guess = 1
 
-while ans != a_in:
-    if a_in < ans:
-        a_in = int(input("too small"))
-    else:
-        a_in = int(input("too big"))
-    guess += 1
+    while ans != a_in:
+        if a_in < ans:
+            a_in = int(input("too small"))
+        else:
+            a_in = int(input("too big"))
+        guess += 1
 
-alert("恭喜答對 ,一共猜了" + (str(guess)) + "次")
+    alert("恭喜答對 ,一共猜了" + (str(guess)) + "次")
+
+document['ch02'].bind('click',two_input)
+
 </script>
+
+<p><button id="ch02">猜數字</button></p>
 
 </pre>
             </div>

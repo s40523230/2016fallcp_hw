@@ -75,45 +75,59 @@ brython(1);
 &lt;!-- 以下實際利用  Brython 畫圖 --&gt;
 
 &lt;script type="text/python3"&gt;
+from browser import document
 from browser import alert
 import random
 
-ans = random.randint(1, 100)
+def two_input(ev):
+    ans = random.randint(1, 100)
 
-a_in = int(input("輸入整數:"))
-guess = 1
+    a_in = int(input("輸入整數:"))
+    guess = 1
 
-while ans != a_in:
-    if a_in &lt; ans:
-        a_in = int(input("too small"))
-    else:
-        a_in = int(input("too big"))
-    guess += 1
+    while ans != a_in:
+        if a_in &lt; ans:
+            a_in = int(input("too small"))
+        else:
+            a_in = int(input("too big"))
+        guess += 1
 
-alert("恭喜答對 ,一共猜了" + (str(guess)) + "次")
+    alert("恭喜答對 ,一共猜了" + (str(guess)) + "次")
+
+document['ch02'].bind('click',two_input)
+
 &lt;/script&gt;
+
+&lt;p&gt;&lt;button id="ch02"&gt;猜數字&lt;/button&gt;&lt;/p&gt;
 
 &lt;pre class="brush: python"&gt;
 
 &lt;!-- 以下實際利用  Brython 畫圖 --&gt;
 &lt;script type="text/python3"&gt;
+from browser import document
 from browser import alert
 import random
 
-ans = random.randint(1, 100)
+def two_input(ev):
+    ans = random.randint(1, 100)
 
-a_in = int(input("輸入整數:"))
-guess = 1
+    a_in = int(input("輸入整數:"))
+    guess = 1
 
-while ans != a_in:
-    if a_in &lt; ans:
-        a_in = int(input("too small"))
-    else:
-        a_in = int(input("too big"))
-    guess += 1
+    while ans != a_in:
+        if a_in &lt; ans:
+            a_in = int(input("too small"))
+        else:
+            a_in = int(input("too big"))
+        guess += 1
 
-alert("恭喜答對 ,一共猜了" + (str(guess)) + "次")
+    alert("恭喜答對 ,一共猜了" + (str(guess)) + "次")
+
+document['ch02'].bind('click',two_input)
+
 &lt;/script&gt;
+
+&lt;p&gt;&lt;button id="ch02"&gt;猜數字&lt;/button&gt;&lt;/p&gt;
 
 &lt;/pre&gt;</summary><category term="Brython"></category></entry><entry><title>w13</title><link href="./w13.html" rel="alternate"></link><published>2016-12-11T12:00:00+08:00</published><updated>2016-12-11T12:00:00+08:00</updated><author><name>40523230</name></author><id>tag:,2016-12-11:./w13.html</id><summary type="html">&lt;p&gt;Brython 繪圖&lt;/p&gt;
 
