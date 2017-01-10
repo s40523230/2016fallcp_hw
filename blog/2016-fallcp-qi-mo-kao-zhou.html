@@ -2,7 +2,7 @@
 <html lang="en"
 >
 <head>
-    <title>w18-1 - 2016Fall CPB 課程網誌 (虎尾科大MDE)</title>
+    <title>2016 fallcp 期末考週 - 2016Fall CPB 課程網誌 (虎尾科大MDE)</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -166,18 +166,17 @@ init_mathjax = function() {
 init_mathjax();
 </script>
 
-<link rel="canonical" href="./w18-1.html">
+<link rel="canonical" href="./2016-fallcp-qi-mo-kao-zhou.html">
 
         <meta name="author" content="40523230" />
         <meta name="keywords" content="Brython" />
-        <meta name="description" content="Brython 繪圖" />
 
         <meta property="og:site_name" content="2016Fall CPB 課程網誌 (虎尾科大MDE)" />
         <meta property="og:type" content="article"/>
-        <meta property="og:title" content="w18-1"/>
-        <meta property="og:url" content="./w18-1.html"/>
-        <meta property="og:description" content="Brython 繪圖"/>
-        <meta property="article:published_time" content="2016-12-11" />
+        <meta property="og:title" content="2016 fallcp 期末考週"/>
+        <meta property="og:url" content="./2016-fallcp-qi-mo-kao-zhou.html"/>
+        <meta property="og:description" content=""/>
+        <meta property="article:published_time" content="2016-12-26" />
             <meta property="article:section" content="Course" />
             <meta property="article:tag" content="Brython" />
             <meta property="article:author" content="40523230" />
@@ -290,10 +289,10 @@ init_mathjax();
         <article>
             <header class="page-header">
                 <h1>
-                    <a href="./w18-1.html"
+                    <a href="./2016-fallcp-qi-mo-kao-zhou.html"
                        rel="bookmark"
-                       title="Permalink to w18-1">
-                        w18-1
+                       title="Permalink to 2016 fallcp 期末考週">
+                        2016 fallcp 期末考週
                     </a>
                 </h1>
             </header>
@@ -303,7 +302,7 @@ init_mathjax();
 <footer class="post-info">
     <span class="label label-default">Date</span>
     <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2016-12-11T12:00:00+08:00"> 週日 11 十二月 2016</time>
+        <i class="fa fa-calendar"></i><time datetime="2016-12-26T12:00:00+08:00"> 週一 26 十二月 2016</time>
     </span>
             <span class="label label-default">By</span>
             <a href="./author/40523230.html"><i class="fa fa-user"></i> 40523230</a>
@@ -315,10 +314,8 @@ init_mathjax();
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
-                <p>Brython 繪圖</p>
+                <!-- PELICAN_END_SUMMARY -->
 
-
-<p>繪圖流程, 導入程式庫, 啟動, 然後引用各種模組開始繪圖</p>
 <!-- 導入 Brython 標準程式庫 -->
 
 <script type="text/javascript" 
@@ -333,6 +330,7 @@ brython(1);
 }
 </script>
 
+<p>W15 製作按鈕</p>
 <!-- 以下實際利用  Brython 畫圖 -->
 
 <script type="text/python3">
@@ -367,6 +365,70 @@ document['ch01'].bind('click',get_input)
 <p><button id="ch01">取輸入後, 列印出來</button></p>
 
 </pre>
+
+<p>W16 猜數字遊戲</p>
+<!-- 以下實際利用  Brython 畫圖 -->
+
+<script type="text/python3">
+from browser import document
+from browser import alert
+import random
+
+def two_input(ev):
+    ans = random.randint(1, 100)
+
+    a_in = int(input("輸入整數:"))
+    guess = 1
+
+    while ans != a_in:
+        if a_in < ans:
+            a_in = int(input("too small"))
+        else:
+            a_in = int(input("too big"))
+        guess += 1
+
+    alert("恭喜答對 ,一共猜了" + (str(guess)) + "次")
+
+document['ch02'].bind('click',two_input)
+
+</script>
+
+<p><button id="ch02">猜數字</button></p>
+
+<pre class="brush: python">
+
+<!-- 以下實際利用  Brython 畫圖 -->
+<script type="text/python3">
+from browser import document
+from browser import alert
+import random
+
+def two_input(ev):
+    ans = random.randint(1, 100)
+
+    a_in = int(input("輸入整數:"))
+    guess = 1
+
+    while ans != a_in:
+        if a_in < ans:
+            a_in = int(input("too small"))
+        else:
+            a_in = int(input("too big"))
+        guess += 1
+
+    alert("恭喜答對 ,一共猜了" + (str(guess)) + "次")
+
+document['ch02'].bind('click',two_input)
+
+</script>
+
+<p><button id="ch02">猜數字</button></p>
+
+</pre>
+
+<p>w17 1/2放假</p>
+<p><a href="https://vimeo.com/198638361">影片</a></p>
+<p><a href="https://github.com/s40523230/2016fallcp_hw/wiki/w18-%E6%9C%9F%E6%9C%AB">wiki比較詳細老師看這個就好</a></p>
             </div>
             <!-- /.entry-content -->
         </article>
@@ -382,6 +444,11 @@ document['ch01'].bind('click',get_input)
             <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
                 <ul class="list-group" id="recentposts">
                     <li class="list-group-item">
+                        <a href="./2016-fallcp-qi-mo-kao-zhou.html">
+                            2016 fallcp 期末考週
+                        </a>
+                    </li>
+                    <li class="list-group-item">
                         <a href="./2016fallcp-qi-mo-kao-zhou.html">
                             2016fallcp 期末考週
                         </a>
@@ -392,18 +459,13 @@ document['ch01'].bind('click',get_input)
                         </a>
                     </li>
                     <li class="list-group-item">
+                        <a href="./w18-0.html">
+                            w18-0
+                        </a>
+                    </li>
+                    <li class="list-group-item">
                         <a href="./w18-2.html">
                             w18-2
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="./w13.html">
-                            w13
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="./w15.html">
-                            w15
                         </a>
                     </li>
                 </ul>

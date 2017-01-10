@@ -330,10 +330,102 @@ brython(1);
 }
 </script>
 
+<p>W15 製作按鈕</p>
 <!-- 以下實際利用  Brython 畫圖 -->
 
-<p><a href="https://s40523230.github.io/2016fallcp_hw/blog/w18-1.html">w15製作按鈕</a></p>
-<p><a href="https://s40523230.github.io/2016fallcp_hw/blog/w18-2.html">w16 猜數字遊戲</a></p>
+<script type="text/python3">
+from browser import document
+from browser import alert
+
+def get_input(ev):
+    the_input = input("請輸入")
+    alert("輸入為:"+str(the_input))
+
+document['ch01'].bind('click',get_input)
+
+</script>
+
+<p><button id="ch01">取輸入後, 列印出來</button></p>
+
+<pre class="brush: python">
+
+<!-- 以下實際利用  Brython 畫圖 -->
+<script type="text/python3">
+from browser import document
+from browser import alert
+
+def get_input(ev):
+    the_input = input("請輸入")
+    alert("輸入為:"+str(the_input))
+
+document['ch01'].bind('click',get_input)
+
+</script>
+
+<p><button id="ch01">取輸入後, 列印出來</button></p>
+
+</pre>
+
+<p>W16 猜數字遊戲</p>
+<!-- 以下實際利用  Brython 畫圖 -->
+
+<script type="text/python3">
+from browser import document
+from browser import alert
+import random
+
+def two_input(ev):
+    ans = random.randint(1, 100)
+
+    a_in = int(input("輸入整數:"))
+    guess = 1
+
+    while ans != a_in:
+        if a_in < ans:
+            a_in = int(input("too small"))
+        else:
+            a_in = int(input("too big"))
+        guess += 1
+
+    alert("恭喜答對 ,一共猜了" + (str(guess)) + "次")
+
+document['ch02'].bind('click',two_input)
+
+</script>
+
+<p><button id="ch02">猜數字</button></p>
+
+<pre class="brush: python">
+
+<!-- 以下實際利用  Brython 畫圖 -->
+<script type="text/python3">
+from browser import document
+from browser import alert
+import random
+
+def two_input(ev):
+    ans = random.randint(1, 100)
+
+    a_in = int(input("輸入整數:"))
+    guess = 1
+
+    while ans != a_in:
+        if a_in < ans:
+            a_in = int(input("too small"))
+        else:
+            a_in = int(input("too big"))
+        guess += 1
+
+    alert("恭喜答對 ,一共猜了" + (str(guess)) + "次")
+
+document['ch02'].bind('click',two_input)
+
+</script>
+
+<p><button id="ch02">猜數字</button></p>
+
+</pre>
+
 <p>w17 1/2放假</p>
 <p><a href="https://vimeo.com/198638361">影片</a></p>
 <p><a href="https://github.com/s40523230/2016fallcp_hw/wiki/w18-%E6%9C%9F%E6%9C%AB">wiki比較詳細老師看這個就好</a></p>
@@ -352,6 +444,11 @@ brython(1);
             <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
                 <ul class="list-group" id="recentposts">
                     <li class="list-group-item">
+                        <a href="./2016-fallcp-qi-mo-kao-zhou.html">
+                            2016 fallcp 期末考週
+                        </a>
+                    </li>
+                    <li class="list-group-item">
                         <a href="./2016fallcp-qi-mo-kao-zhou.html">
                             2016fallcp 期末考週
                         </a>
@@ -362,18 +459,13 @@ brython(1);
                         </a>
                     </li>
                     <li class="list-group-item">
+                        <a href="./w18-0.html">
+                            w18-0
+                        </a>
+                    </li>
+                    <li class="list-group-item">
                         <a href="./w18-2.html">
                             w18-2
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="./w13.html">
-                            w13
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="./w15.html">
-                            w15
                         </a>
                     </li>
                 </ul>
